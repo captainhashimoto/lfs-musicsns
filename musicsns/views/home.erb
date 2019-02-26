@@ -1,0 +1,20 @@
+<div class="center-vertical">
+	<h1><%= current_user.name %>の投稿</h1>
+  <%if !@musics.nil?%>
+	<%@musics.each do|music|%>
+  	<div class="post">
+			<div class="center-vertical">
+				<img src="<%=music.image_url%>" width: 35vh;><br>
+				<%=music.artist%><br>
+				<%=music.album%><br>
+				<%=music.track%><br>
+				<a href=<%=music.sample_url%>>サンプル</a><br>
+				コメント：<%=music.comment%><br>
+				<a href="/edit/<%=music.id%>">編集</a><br>
+				<a href="/delete/<%=music.id%>">削除</a>
+				</form>
+				</div>
+			</div>
+	<%end%>
+<%end%>
+</div>
